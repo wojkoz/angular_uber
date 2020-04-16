@@ -12,6 +12,7 @@ import {MainViewItemComponent} from './components/main-view-item/main-view-item.
 import {MainViewItemTextComponent} from './components/main-view-item-text/main-view-item-text.component';
 import {MainViewItemImageComponent} from './components/main-view-item-image/main-view-item-image.component';
 import {MainViewItemDescriptionComponent} from './components/main-view-item-description/main-view-item-description.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -28,9 +29,11 @@ import {MainViewItemDescriptionComponent} from './components/main-view-item-desc
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

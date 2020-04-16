@@ -1,18 +1,11 @@
 
-<div class="row">
-  <div class="col-sm"><main-view-item title="tytuł"
-                       image="https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/original.jpeg"
-                       description="opis">
+<div class="row">>
+  <div class="col-sm" *ngFor="let tab of tabs">
+    <main-view-item [title]="tab.title"
+                       [icon]="tab.icon"
+                       [description]="tab.description">
 
-  </main-view-item></div>
-  <div class="col-sm"><main-view-item title="tytuł 2"
-                       image="https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/original.jpeg"
-                       description="opis 2">
+  </main-view-item>
+  </div>
 
-  </main-view-item></div>
-  <div class="col-sm"><main-view-item title="tytuł 3"
-                       image="https://dyl80ryjxr1ke.cloudfront.net/external_assets/hero_examples/hair_beach_v1785392215/original.jpeg"
-                       description="opis 3">
-
-  </main-view-item></div>
 </div>
