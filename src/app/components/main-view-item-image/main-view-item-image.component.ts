@@ -6,8 +6,10 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./main-view-item-image.component.css']
 })
 export class MainViewItemImageComponent implements OnInit {
-  @Input() image: string;
-  constructor() { }
+  @Input() icon: any;
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
