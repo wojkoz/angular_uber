@@ -11,6 +11,7 @@ import {MainViewComponent} from './components/main-view/main-view.component';
 import {MainViewItemComponent} from './components/main-view-item/main-view-item.component';
 import {MainViewItemTextComponent} from './components/main-view-item-text/main-view-item-text.component';
 import {MainViewItemImageComponent} from './components/main-view-item-image/main-view-item-image.component';
+import {MainViewItemDescriptionComponent} from './components/main-view-item-description/main-view-item-description.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {MainViewItemImageComponent} from './components/main-view-item-image/main
     MainViewComponent,
     MainViewItemComponent,
     MainViewItemTextComponent,
-    MainViewItemImageComponent
+    MainViewItemImageComponent,
+    MainViewItemDescriptionComponent
   ],
   imports: [
     BrowserModule,
