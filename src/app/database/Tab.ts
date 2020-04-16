@@ -4,22 +4,26 @@ export interface Tab {
   title: string,
   icon: any,
   description: string,
+  active: boolean,
 }
 
 export const tabs = [
   {
     title: 'Tab 1',
     icon: faCoffee,
-    description: 'opis'
+    description: 'opis',
+    active: true
   },
   {
     title: 'Tab 2',
     icon: faAddressBook,
-    description: 'opis'
+    description: 'opis',
+    active: false
   },
   {
     title: 'Tab 3',
     icon: faCamera,
-    description: 'opis'
+    description: 'opis',
+    active: false
   }
 ];
