@@ -1,11 +1,19 @@
 
-<div class="row">>
-  <div class="col-sm" *ngFor="let tab of tabs">
-    <main-view-item [title]="tab.title"
-                       [icon]="tab.icon"
-                       [description]="tab.description">
+<div>
+  <div class="row">>
+    <div class="col-sm" *ngFor="let tab of tabs">
+      <main-view-item [title]="tab.title"
+                      [icon]="tab.icon"
+                      [description]="tab.description" (click)="onClick(tab.title)">
 
-  </main-view-item>
+      </main-view-item>
+      <!-- ten tegest co sie wyswietla pod tabami na uber -->
+      <div *ngIf="tab.active">
+        {{tab.title}}
+      </div>
+    </div>
+
   </div>
+
 
 </div>
