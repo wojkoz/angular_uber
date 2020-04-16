@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./main-view-item-description.component.css']
 })
 export class MainViewItemDescriptionComponent implements OnInit {
-  @Input() descriptor: string;
+  @Input() description: string;
   constructor() { }
 
   ngOnInit(): void {
