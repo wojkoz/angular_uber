@@ -13,6 +13,7 @@ import {MainViewItemTextComponent} from './components/main-view-item-text/main-v
 import {MainViewItemImageComponent} from './components/main-view-item-image/main-view-item-image.component';
 import {MainViewItemDescriptionComponent} from './components/main-view-item-description/main-view-item-description.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {FooterComponent} from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
     MainViewItemComponent,
     MainViewItemTextComponent,
     MainViewItemImageComponent,
-    MainViewItemDescriptionComponent
+    MainViewItemDescriptionComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
