@@ -1,0 +1,12 @@
+div{
+  background-color: burlywood;
+  padding-left: 3rem;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+div#links-footer a{
+  margin-top: 10px;
+  font-size: 2vh;
+}
+
