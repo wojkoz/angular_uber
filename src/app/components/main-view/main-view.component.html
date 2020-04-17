@@ -1,7 +1,6 @@
-
-<div>
-  <div class="row">>
-    <div class="col-sm" *ngFor="let tab of tabs">
+<div id="mainViewComponent">
+  <div class="row">
+    <div id="border" class="col-sm" *ngFor="let tab of tabs">
       <main-view-item [title]="tab.title"
                       [icon]="tab.icon"
                       (click)="onClick(tab.title)">
@@ -14,6 +13,5 @@
     </div>
 
   </div>
-
 
 </div>
