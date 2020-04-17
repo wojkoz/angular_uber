@@ -7,6 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class MainViewItemDescriptionComponent implements OnInit {
   @Input() description: string;
+  @Input() id: number;
   constructor() { }
 
   ngOnInit(): void {

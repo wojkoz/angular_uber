@@ -9,7 +9,7 @@
       </main-view-item>
       <!-- ten tegest co sie wyswietla pod tabami na uber -->
       <div *ngIf="tab.active">
-        <main-view-item-description [description]="tab.description"></main-view-item-description>
+        <main-view-item-description [id]="tab.id" [description]="tab.description"></main-view-item-description>
       </div>
     </div>
 

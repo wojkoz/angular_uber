@@ -14,6 +14,7 @@ import {MainViewItemImageComponent} from './components/main-view-item-image/main
 import {MainViewItemDescriptionComponent} from './components/main-view-item-description/main-view-item-description.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FooterComponent} from './components/footer/footer.component';
+import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-view-item-description-calculate-road/main-view-item-description-calculate-road.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {FooterComponent} from './components/footer/footer.component';
     MainViewItemTextComponent,
     MainViewItemImageComponent,
     MainViewItemDescriptionComponent,
-    FooterComponent
+    FooterComponent,
+    MainViewItemDescriptionCalculateRoadComponent,
   ],
   imports: [
     BrowserModule,
