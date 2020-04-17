@@ -8,7 +8,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class MainViewItemComponent implements OnInit {
   @Input() title: string;
   @Input() icon: any;
-  @Input() description:string;
+
   constructor() { }
 
   ngOnInit(): void {

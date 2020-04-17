@@ -4,12 +4,12 @@
     <div class="col-sm" *ngFor="let tab of tabs">
       <main-view-item [title]="tab.title"
                       [icon]="tab.icon"
-                      [description]="tab.description" (click)="onClick(tab.title)">
+                      (click)="onClick(tab.title)">
 
       </main-view-item>
       <!-- ten tegest co sie wyswietla pod tabami na uber -->
       <div *ngIf="tab.active">
-        {{tab.title}}
+        <main-view-item-description [description]="tab.description"></main-view-item-description>
       </div>
     </div>
 
