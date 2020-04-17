@@ -1,4 +1,5 @@
-import {faAddressBook, faCamera, faCoffee} from '@fortawesome/free-solid-svg-icons';
+import {faCar, faDollarSign, faSuitcaseRolling} from '@fortawesome/free-solid-svg-icons';
+
 
 export interface Tab {
   title: string,
@@ -9,21 +10,21 @@ export interface Tab {
 
 export const tabs = [
   {
-    title: 'Tab 1',
-    icon: faCoffee,
-    description: 'opis',
+    title: 'Przejazdy',
+    icon: faCar,
+    description: 'Wybierz miejsce docelowe oraz miejsce odbioru',
     active: true
   },
   {
-    title: 'Tab 2',
-    icon: faAddressBook,
-    description: 'opis',
+    title: 'Przychody',
+    icon: faDollarSign,
+    description: 'Zostań kierowcą i zacznij zarabiać',
     active: false
   },
   {
-    title: 'Tab 3',
-    icon: faCamera,
-    description: 'opis',
+    title: 'Dla firm',
+    icon: faSuitcaseRolling,
+    description: 'Zapewnij przejazdy swoim pracownikom',
     active: false
   }
 ];
