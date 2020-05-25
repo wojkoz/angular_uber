@@ -24,8 +24,10 @@
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@types/googlemaps": "^3.39.6",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
+    "location-picker": "^1.1.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
