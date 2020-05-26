@@ -1,0 +1,14 @@
+<div>
+  <agm-map [latitude]="latitude" [longitude]="longitude" (mapClick)="onMapClick($event)" >
+    <agm-marker [longitude]="longitude" [latitude]="latitude"></agm-marker>
+  </agm-map>
+  <div
+       class="autocomplete-container"
+       [ngStyle.xs]="{'min-width.%': 100}"
+       [ngStyle.sm]="{'width.%': 70}">
+    <mat-google-maps-autocomplete (onAutocompleteSelected)="onAutocompleteSelected($event)"
+                                  (onLocationSelected)="onLocationSelected($event)">
+    </mat-google-maps-autocomplete>
+  </div>
+
+</div>

@@ -1,7 +1,12 @@
 <div>
-  <p>main-view-item-description-calculate-road works!</p>
-  <p>https://www.npmjs.com/package/location-picker <b>uzyc tego w celu znalezienia lokalizacji</b></p>
-  <div id="map"></div>
-  <button (click)="setLocation()">Submit Location</button>
+  <div class="mapka">
+    <app-map (markerEvent)="onSetMarker($event)"></app-map>
+  </div>
+
+  <div class="mapka">
+
+    <app-map (markerEvent)="onSetMarker($event)"></app-map>
+  </div>
+
 </div>
 

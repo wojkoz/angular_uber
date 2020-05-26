@@ -15,6 +15,13 @@ import {MainViewItemDescriptionComponent} from './components/main-view-item-desc
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FooterComponent} from './components/footer/footer.component';
 import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-view-item-description-calculate-road/main-view-item-description-calculate-road.component';
+import {AgmCoreModule} from '@agm/core'
+import {environment} from '../environments/environment';
+import { MapComponent } from './components/map/map.component';
+import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -30,11 +37,20 @@ import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-v
     MainViewItemDescriptionComponent,
     FooterComponent,
     MainViewItemDescriptionCalculateRoadComponent,
+    MapComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.apiKey,
+      libraries: ['places']
+    }),
+    MatGoogleMapsAutocompleteModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
