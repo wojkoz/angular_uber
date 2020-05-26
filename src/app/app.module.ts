@@ -21,6 +21,7 @@ import { MapComponent } from './components/map/map.component';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { DirectionsMapDirective } from './directives/directions-map.directive';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     FooterComponent,
     MainViewItemDescriptionCalculateRoadComponent,
     MapComponent,
+    DirectionsMapDirective,
 
   ],
   imports: [

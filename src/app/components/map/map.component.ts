@@ -15,6 +15,8 @@ export class MapComponent implements OnInit {
   latitude = 50.024230;
   longitude = 20.971066;
   selectedAddress: PlaceResult;
+  longitudeDes: number;
+  latitudeDes: number;
 
   constructor(private titleService: Title) {
 
@@ -46,6 +48,12 @@ export class MapComponent implements OnInit {
     console.log('onLocationSelected: ', location);
     this.latitude = location.latitude;
     this.longitude = location.longitude;
+  }
+
+  onDestinationLocationSelected(location: Location) {
+    console.log('onLocationSelected: ', location);
+    this.latitudeDes = location.latitude;
+    this.longitudeDes = location.longitude;
   }
 
   onMapClick(event) {
