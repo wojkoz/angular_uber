@@ -1,29 +1,41 @@
-import { Component, OnInit, Output, EventEmitter, ViewEncapsulation  } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, ChangeDetectorRef} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {Location, Appearance, GermanAddress} from '@angular-material-extensions/google-maps-autocomplete';
+import {Location, Appearance} from '@angular-material-extensions/google-maps-autocomplete';
 import PlaceResult = google.maps.places.PlaceResult;
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
+
+
 export class MapComponent implements OnInit {
   @Output() markerEvent = new EventEmitter<object>();
 
-  appearance = Appearance;
+  //---------------------------------------------
+  origin = {
+    lat: 50.024230,
+    lng: 20.971066
+  };
+  destination = {
+    lat: 51.024230,
+    lng: 20.971066
+  };
+  displayDirections = true;
+  //----------------------------------------------
+
   zoom: number;
   latitude = 50.024230;
   longitude = 20.971066;
-  selectedAddress: PlaceResult;
-  longitudeDes: number;
-  latitudeDes: number;
 
-  constructor(private titleService: Title) {
+
+  constructor(private titleService: Title, private cdr: ChangeDetectorRef) {
 
   }
 
   ngOnInit(): void {
-    this.titleService.setTitle('Home | @angular-material-extensions/google-maps-autocomplete');
+    this.titleService.setTitle('Home');
 
     this.zoom = 10;
 
@@ -33,8 +45,8 @@ export class MapComponent implements OnInit {
   private setCurrentPosition() {
     if ('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
+        this.origin.lat = position.coords.latitude;
+        this.origin.lng = position.coords.longitude;
         this.zoom = 12;
       });
     }
@@ -42,25 +54,31 @@ export class MapComponent implements OnInit {
 
   onAutocompleteSelected(result: PlaceResult) {
     console.log('onAutocompleteSelected: ', result);
+    this.displayDirections = true;
+
   }
 
   onLocationSelected(location: Location) {
     console.log('onLocationSelected: ', location);
-    this.latitude = location.latitude;
-    this.longitude = location.longitude;
+    this.origin.lat = location.latitude;
+    this.origin.lng = location.longitude;
+    this.cdr.detectChanges();
+    this.displayDirections = true;
   }
 
   onDestinationLocationSelected(location: Location) {
     console.log('onLocationSelected: ', location);
-    this.latitudeDes = location.latitude;
-    this.longitudeDes = location.longitude;
+    this.destination.lat = location.latitude;
+    this.destination.lng = location.longitude;
+    this.displayDirections = true;
+    this.cdr.detectChanges();
   }
 
   onMapClick(event) {
     this.latitude = event.coords.lat;
     this.longitude = event.coords.lng;
 
-    this.markerEvent.emit({latitude: this.latitude, longitude: this.longitude});
+    this.markerEvent.emit({lat: this.latitude, lng: this.longitude});
 
   }
 }

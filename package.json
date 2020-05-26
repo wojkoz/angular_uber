@@ -30,6 +30,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@types/googlemaps": "^3.39.6",
+    "agm-direction": "^0.7.9",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
     "location-picker": "^1.1.1",

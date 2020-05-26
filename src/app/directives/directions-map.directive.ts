@@ -27,8 +27,6 @@ export class DirectionsMapDirective implements OnInit, OnChanges {
   drawDirectionsRoute() {
     this.gmapsApi.getNativeMap().then(map => {
       if (!this.directionsRenderer) {
-        // if you already have a marker at the coordinate location on the map, use suppressMarkers option
-        // suppressMarkers prevents google maps from automatically adding a marker for you
         this.directionsRenderer = new google.maps.DirectionsRenderer({suppressMarkers: true});
       }
       const directionsRenderer = this.directionsRenderer;
@@ -45,13 +43,6 @@ export class DirectionsMapDirective implements OnInit, OnChanges {
         }, (response, status) => {
           if (status === 'OK') {
             directionsRenderer.setDirections(response);
-            // If you'll like to display an info window along the route
-            // middleStep is used to estimate the midpoint on the route where the info window will appear
-            // const middleStep = (response.routes[0].legs[0].steps.length / 2).toFixed();
-            // const infowindow2 = new google.maps.InfoWindow();
-            // infowindow2.setContent(`${response.routes[0].legs[0].distance.text} <br> ${response.routes[0].legs[0].duration.text}  `);
-            // infowindow2.setPosition(response.routes[0].legs[0].steps[middleStep].end_location);
-            // infowindow2.open(map);
           } else {
             console.log('Directions request failed due to ' + status);
           }

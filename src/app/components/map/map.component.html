@@ -1,10 +1,5 @@
 <div>
-  <agm-map appDirectionsMap [showDirection]="this.displayDirections"
-           [origin]="origin"
-           [destination]="destination" [latitude]="latitude" [longitude]="longitude" (mapClick)="onMapClick($event)" >
-    <agm-marker [longitude]="longitude" [latitude]="latitude"></agm-marker>
-    <agm-marker [longitude]="longitudeDes" [latitude]="latitudeDes"></agm-marker>
-  </agm-map>
+  <app-map-view [origin]="this.origin" [destination]="this.destination" [displayDirection]="this.displayDirections"></app-map-view>
   <div
        class="autocomplete-container"
        [ngStyle.xs]="{'min-width.%': 100}"

@@ -15,13 +15,16 @@ import {MainViewItemDescriptionComponent} from './components/main-view-item-desc
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FooterComponent} from './components/footer/footer.component';
 import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-view-item-description-calculate-road/main-view-item-description-calculate-road.component';
-import {AgmCoreModule} from '@agm/core'
-import {environment} from '../environments/environment';
+import {AgmCoreModule, GoogleMapsAPIWrapper} from '@agm/core';
+import {environment} from '../environments/environment'
 import { MapComponent } from './components/map/map.component';
 import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { DirectionsMapDirective } from './directives/directions-map.directive';
+import { MapViewComponent } from './components/map-view/map-view.component';
+import {AgmDirection} from 'agm-direction/src/directive/agm-direction.directive';
+import {AgmDirectionModule} from 'agm-direction';
 
 
 @NgModule({
@@ -40,6 +43,7 @@ import { DirectionsMapDirective } from './directives/directions-map.directive';
     MainViewItemDescriptionCalculateRoadComponent,
     MapComponent,
     DirectionsMapDirective,
+    MapViewComponent,
 
   ],
   imports: [
@@ -48,11 +52,12 @@ import { DirectionsMapDirective } from './directives/directions-map.directive';
     FontAwesomeModule,
     AgmCoreModule.forRoot({
       apiKey: environment.apiKey,
-      libraries: ['places']
+      libraries: ['places','directions']
     }),
+    AgmDirectionModule,
     MatGoogleMapsAutocompleteModule,
     FlexLayoutModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
