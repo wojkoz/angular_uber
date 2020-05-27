@@ -1,14 +1,17 @@
 <div>
   <app-map-view [origin]="this.origin" [destination]="this.destination" [displayDirection]="this.displayDirections"></app-map-view>
-  <mat-card-content>
-    <mat-google-maps-autocomplete (onAutocompleteSelected)="onAutocompleteSelected($event)"
-                                  (onLocationSelected)="onLocationSelected($event)">
+  <mat-card-content class="autocomplete-container">
+    <mat-google-maps-autocomplete (onAutocompleteSelected)="onAutocompleteSelected($event) "
+                                  (onLocationSelected)="onLocationSelected($event)"
+                                  [addressLabelText]="adres_poczatkowy"
+                                  [placeholderText]="default_adres">
     </mat-google-maps-autocomplete>
   </mat-card-content>
-  <mat-card-content>
+  <mat-card-content class="autocomplete-container">
     <mat-google-maps-autocomplete (onAutocompleteSelected)="onAutocompleteSelected($event)"
-                                  (onLocationSelected)="onDestinationLocationSelected($event)">
+                                  (onLocationSelected)="onDestinationLocationSelected($event)"
+                                  [addressLabelText]="adres_koncowy">
     </mat-google-maps-autocomplete>
   </mat-card-content>
-
+  <div id="msg"></div>
 </div>

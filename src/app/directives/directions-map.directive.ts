@@ -42,7 +42,13 @@ export class DirectionsMapDirective implements OnInit, OnChanges {
           travelMode: 'DRIVING'
         }, (response, status) => {
           if (status === 'OK') {
-            directionsRenderer.setDirections(response);
+            let directionsData = response.routes[0].legs[0]; // Get data about the mapped route
+            if (!directionsData) {
+              return;
+            }
+            else {
+              console.log(directionsData.distance.text)
+            }
           } else {
             console.log('Directions request failed due to ' + status);
           }
