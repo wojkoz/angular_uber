@@ -1,7 +1,8 @@
-import {Component, OnInit, Output, EventEmitter, ChangeDetectorRef} from '@angular/core';
+import {Component, OnInit, Output, EventEmitter, ChangeDetectorRef, OnChanges} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {Location, Appearance} from '@angular-material-extensions/google-maps-autocomplete';
 import PlaceResult = google.maps.places.PlaceResult;
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-map',

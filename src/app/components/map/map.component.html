@@ -1,20 +1,14 @@
 <div>
   <app-map-view [origin]="this.origin" [destination]="this.destination" [displayDirection]="this.displayDirections"></app-map-view>
-  <div
-       class="autocomplete-container"
-       [ngStyle.xs]="{'min-width.%': 100}"
-       [ngStyle.sm]="{'width.%': 70}">
+  <mat-card-content>
     <mat-google-maps-autocomplete (onAutocompleteSelected)="onAutocompleteSelected($event)"
                                   (onLocationSelected)="onLocationSelected($event)">
     </mat-google-maps-autocomplete>
-  </div>
-  <div
-    class="autocomplete-container"
-    [ngStyle.xs]="{'min-width.%': 100}"
-    [ngStyle.sm]="{'width.%': 70}">
+  </mat-card-content>
+  <mat-card-content>
     <mat-google-maps-autocomplete (onAutocompleteSelected)="onAutocompleteSelected($event)"
                                   (onLocationSelected)="onDestinationLocationSelected($event)">
     </mat-google-maps-autocomplete>
-  </div>
+  </mat-card-content>
 
 </div>

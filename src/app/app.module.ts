@@ -25,6 +25,7 @@ import { DirectionsMapDirective } from './directives/directions-map.directive';
 import { MapViewComponent } from './components/map-view/map-view.component';
 import {AgmDirection} from 'agm-direction/src/directive/agm-direction.directive';
 import {AgmDirectionModule} from 'agm-direction';
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -46,19 +47,20 @@ import {AgmDirectionModule} from 'agm-direction';
     MapViewComponent,
 
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule,
-    AgmCoreModule.forRoot({
-      apiKey: environment.apiKey,
-      libraries: ['places','directions']
-    }),
-    AgmDirectionModule,
-    MatGoogleMapsAutocompleteModule,
-    FlexLayoutModule,
-    BrowserAnimationsModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        AgmCoreModule.forRoot({
+            apiKey: environment.apiKey,
+            libraries: ['places', 'directions']
+        }),
+        AgmDirectionModule,
+        MatGoogleMapsAutocompleteModule,
+        FlexLayoutModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
