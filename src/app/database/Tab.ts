@@ -1,4 +1,4 @@
-import {faCar, faDollarSign, faSuitcaseRolling} from '@fortawesome/free-solid-svg-icons';
+import {faCar, faDollarSign, faRoute} from '@fortawesome/free-solid-svg-icons';
 
 
 export interface Tab {
@@ -18,22 +18,22 @@ export const tabs = [
   {
     id: 0,
     title: 'Przejazdy',
-    icon: faCar,
+    icon: faRoute,
     description: 'Wybierz miejsce docelowe oraz miejsce odbioru',
     active: true
   },
   {
     id: 1,
-    title: 'Przychody',
+    title: 'O nas',
     icon: faDollarSign,
-    description: 'Zostań kierowcą i zacznij zarabiać',
-    active: false
+    description: '',
+    active: true
   },
   {
     id: 1,
-    title: 'Dla firm',
-    icon: faSuitcaseRolling,
-    description: 'Zapewnij przejazdy swoim pracownikom',
-    active: false
+    title: 'Ostanie kursy',
+    icon: faCar,
+    description: '',
+    active: true
   }
 ];

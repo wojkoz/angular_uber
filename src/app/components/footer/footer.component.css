@@ -1,11 +1,15 @@
 div{
   background-color: burlywood;
   padding-top: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 div#links-footer a{
   margin-top: 10px;
   font-size: 2vh;
+  height: 100px;
 }
 
 ul#footer li{

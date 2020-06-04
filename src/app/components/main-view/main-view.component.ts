@@ -16,7 +16,4 @@ export class MainViewComponent implements OnInit {
 
   ngOnInit(): void {
   }
- onClick(title: string){
-   this.tabs.forEach(tab => {tab.active = tab.title === title;})
- }
 }

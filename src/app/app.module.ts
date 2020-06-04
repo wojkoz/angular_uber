@@ -26,6 +26,8 @@ import {MapViewComponent} from './components/map-view/map-view.component';
 import {AgmDirectionModule} from 'agm-direction';
 import {MatCardModule} from "@angular/material/card";
 import {HttpClientModule} from "@angular/common/http";
+import {CourseComponent} from './components/course/course.component';
+import {LinksBarComponent} from './components/links-bar/links-bar.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import {HttpClientModule} from "@angular/common/http";
     MapComponent,
     DirectionsMapDirective,
     MapViewComponent,
+    CourseComponent,
+    LinksBarComponent,
 
   ],
     imports: [
