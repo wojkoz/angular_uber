@@ -64,6 +64,7 @@ export class MapComponent implements OnInit {
     this.origin.lat = location.latitude;
     this.origin.lng = location.longitude;
     this.cdr.detectChanges();
+    this.calculateDistanceAndTime();
     setTimeout(() => {
       this.displayDirections = true;
     }, 100);
@@ -100,7 +101,7 @@ export class MapComponent implements OnInit {
             return;
           }
           else {
-            document.getElementById('msg').innerHTML += "Dystans: " + directionsData.distance.text + " (" + directionsData.duration.text + ").";
+            document.getElementById('msg').innerHTML = "Dystans: " + directionsData.distance.text + " (" + directionsData.duration.text + ").";
           }
         }
       });
