@@ -15,6 +15,18 @@ import {MainViewItemDescriptionComponent} from './components/main-view-item-desc
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FooterComponent} from './components/footer/footer.component';
 import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-view-item-description-calculate-road/main-view-item-description-calculate-road.component';
+import {AgmCoreModule} from '@agm/core';
+import {environment} from '../environments/environment'
+import {MapComponent} from './components/map/map.component';
+import {MatGoogleMapsAutocompleteModule} from '@angular-material-extensions/google-maps-autocomplete';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {DirectionsMapDirective} from './directives/directions-map.directive';
+import {MapViewComponent} from './components/map-view/map-view.component';
+import {AgmDirectionModule} from 'agm-direction';
+import {MatCardModule} from "@angular/material/card";
+import {HttpClientModule} from "@angular/common/http";
+
 
 @NgModule({
   declarations: [
@@ -30,12 +42,26 @@ import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-v
     MainViewItemDescriptionComponent,
     FooterComponent,
     MainViewItemDescriptionCalculateRoadComponent,
+    MapComponent,
+    DirectionsMapDirective,
+    MapViewComponent,
+
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FontAwesomeModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FontAwesomeModule,
+        AgmCoreModule.forRoot({
+            apiKey: environment.apiKey,
+            libraries: ['places', 'directions']
+        }),
+        AgmDirectionModule,
+        MatGoogleMapsAutocompleteModule,
+        FlexLayoutModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        HttpClientModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
