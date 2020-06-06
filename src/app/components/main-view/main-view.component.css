@@ -1,6 +1,7 @@
 div#mainViewComponent{
   border-color: black;
   border-style: solid;
+  margin-top: 2vh;
 }
 
 #border{
