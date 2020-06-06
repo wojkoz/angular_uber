@@ -37,16 +37,19 @@
     "location-picker": "^1.1.1",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "angular2-jwt": "^0.2.3",
+    "rxjs-compat": "~6.3.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.1",
     "@angular/cli": "~9.1.1",
     "@angular/compiler-cli": "~9.1.1",
+    "@angular/http": "^7.2.16",
     "@angular/language-service": "~9.1.1",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",

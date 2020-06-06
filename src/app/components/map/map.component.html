@@ -2,12 +2,14 @@
   <mat-card-content class="autocomplete-container">
     <mat-google-maps-autocomplete (onLocationSelected)="onLocationSelected($event)"
                                   [addressLabelText]="adres_poczatkowy"
-                                  [placeholderText]="default_adres">
+                                  [placeholderText]="default_adres"
+                                  (onAutocompleteSelected)="onAutocompleteSelected($event)">
     </mat-google-maps-autocomplete>
   </mat-card-content>
   <mat-card-content class="autocomplete-container">
     <mat-google-maps-autocomplete (onLocationSelected)="onDestinationLocationSelected($event)"
-                                  [addressLabelText]="adres_koncowy">
+                                  [addressLabelText]="adres_koncowy"
+    (onAutocompleteSelected)="onAutocompleteDestinationSelected($event)">
     </mat-google-maps-autocomplete>
   </mat-card-content>
   <button type="button" class="btn btn-dark" (click)="sendData()">Submit</button>

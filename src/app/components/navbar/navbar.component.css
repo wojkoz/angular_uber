@@ -9,3 +9,7 @@ li{
 nav a{
   color:white;
 }
+
+button#logoutBtn{
+  color: white;
+}

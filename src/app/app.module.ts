@@ -16,7 +16,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FooterComponent} from './components/footer/footer.component';
 import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-view-item-description-calculate-road/main-view-item-description-calculate-road.component';
 import {AgmCoreModule} from '@agm/core';
-import {environment} from '../environments/environment'
+import {environment} from '../environments/environment';
 import {MapComponent} from './components/map/map.component';
 import {MatGoogleMapsAutocompleteModule} from '@angular-material-extensions/google-maps-autocomplete';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -24,10 +24,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DirectionsMapDirective} from './directives/directions-map.directive';
 import {MapViewComponent} from './components/map-view/map-view.component';
 import {AgmDirectionModule} from 'agm-direction';
-import {MatCardModule} from "@angular/material/card";
-import {HttpClientModule} from "@angular/common/http";
+import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http';
 import {CourseComponent} from './components/course/course.component';
 import {LinksBarComponent} from './components/links-bar/links-bar.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -51,21 +52,22 @@ import {LinksBarComponent} from './components/links-bar/links-bar.component';
     LinksBarComponent,
 
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FontAwesomeModule,
-        AgmCoreModule.forRoot({
-            apiKey: environment.apiKey,
-            libraries: ['places', 'directions']
-        }),
-        AgmDirectionModule,
-        MatGoogleMapsAutocompleteModule,
-        FlexLayoutModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        HttpClientModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.apiKey,
+      libraries: ['places', 'directions']
+    }),
+    AgmDirectionModule,
+    MatGoogleMapsAutocompleteModule,
+    FlexLayoutModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    HttpClientModule,
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

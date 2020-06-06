@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Course, DataService} from '../../services/data.service';
 
 declare var google: any;
 @Component({
@@ -11,13 +12,19 @@ export class CourseComponent implements OnInit {
   dest;
   displayDirections = true;
   data;
+  course: Course
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.origin = history.state.data.origin;
     this.dest = history.state.data.dest;
+    this.course = history.state.data.course
     this.calculateDistanceAndTime();
+  }
+  
+  saveCourse(): void {
+    this.dataService.createOrUpdate(this.course).subscribe(value => {console.log(this.course)})
   }
 
   calculateDistanceAndTime(){

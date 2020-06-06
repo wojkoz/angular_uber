@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Location} from '@angular-material-extensions/google-maps-autocomplete';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
+import {AuthService} from '../../services/auth.service';
+import {Course} from '../../services/data.service';
 
 @Component({
   selector: 'app-map',
@@ -25,15 +27,18 @@ export class MapComponent implements OnInit {
   };
   //----------------------------------------------
 
+  course: Course
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.setCurrentPosition();
   }
 
   sendData(): void{
-    this.router.navigate(['/course'], {state: {data: {origin: this.origin, dest: this.destination}}});
+    this.course.userName = this.authService.getLogin();
+
+    this.router.navigate(['/course'], {state: {data: {origin: this.origin, dest: this.destination, course: this.course}}});
   }
 
   private setCurrentPosition() {
@@ -54,5 +59,13 @@ export class MapComponent implements OnInit {
     console.log('onLocationSelected: ', location);
     this.destination.lat = location.latitude;
     this.destination.lng = location.longitude;
+  }
+
+  onAutocompleteSelected($event: google.maps.places.PlaceResult) {
+    this.course.origin = $event.adr_address
+  }
+
+  onAutocompleteDestinationSelected($event: google.maps.places.PlaceResult) {
+    this.course.destination = $event.adr_address
   }
 }
