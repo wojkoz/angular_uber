@@ -16,7 +16,6 @@ export class CourseComponent implements OnInit {
   displayDirections = true;
   data;
   course: Course
-  price: Number;
 
   constructor(private dataService: DataService, private router: Router) {}
 
@@ -25,7 +24,7 @@ export class CourseComponent implements OnInit {
     this.dest = history.state.data.dest;
     this.course = history.state.data.course
     this.calculateDistanceAndTime();
-    this.price = 5;
+    this.course.price = 5;
 
   }
 
@@ -69,7 +68,7 @@ export class CourseComponent implements OnInit {
     const distArr = document.getElementById('distance').innerText.split(" ");
     const distance = Number.parseFloat(distArr[0].replace(',','.'));
     if(distance>2){
-      this.price = 5 + distance * 2;
+      this.course.price = 5 + distance * 2;
     }
   }
 
