@@ -1,5 +1,5 @@
 <div id="signUpMain">
-    <form id="signUpForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <form id="signUpForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()" mat-dialog-content>
       <div class="form-group">
         <label for="loginSignUp">Login</label>
         <input type="text" class="form-control" id="loginSignUp" formControlName="login" placeholder="Enter Login">
@@ -16,6 +16,6 @@
         <label for="passwordSignUpRepeat">Password</label>
         <input type="password" class="form-control" id="passwordSignUpRepeat" formControlName="repeatedPassword" placeholder="Enter Your Password Again">
       </div>
-      <button type="submit" [disabled]="!formGroup.valid" class="btn btn-primary">Submit</button>
+      <button type="submit" [disabled]="!formGroup.valid" class="btn btn-primary" mat-dialog-close>Submit</button>
     </form>
 </div>

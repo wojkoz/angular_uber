@@ -4,13 +4,13 @@
       <a class="nav-link" [routerLink]="['/']">Home</a>
     </li>
     <li class="nav-item" *ngIf="!isLoggedIn()">
-      <a class="nav-link" [routerLink]="['/login']">Login</a>
+      <a class="nav-link" (click)="openLoginDialog()">Login</a>
     </li>
     <li class="nav-item" *ngIf="!isLoggedIn()">
-      <a class="nav-link" [routerLink]="['/signup']">Sign Up</a>
+      <a class="nav-link" (click)="openSignUpDialog()">Sign Up</a>
     </li>
     <li class="nav-item" *ngIf="isLoggedIn()">
-      <button  id="logoutBtn"  (click)="logout()">Logout</button>
+      <button  id="logoutBtn" (click)="logout()">Logout</button>
     </li>
   </ul>
 </nav>

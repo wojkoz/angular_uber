@@ -29,6 +29,8 @@ import {LinksBarComponent} from './components/links-bar/links-bar.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AuthInterceptor} from './services/auth.interceptor';
 import { UserCoursesComponent } from './components/user-courses/user-courses.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { UserCoursesComponent } from './components/user-courses/user-courses.com
     UserCoursesComponent,
 
   ],
+  entryComponents: [LoginComponent, SignupComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -65,7 +68,9 @@ import { UserCoursesComponent } from './components/user-courses/user-courses.com
     BrowserAnimationsModule,
     MatCardModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

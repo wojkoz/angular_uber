@@ -3,6 +3,7 @@ import {Location} from '@angular-material-extensions/google-maps-autocomplete';
 import {Router} from '@angular/router';
 import {AuthService} from '../../services/auth.service';
 import {Course} from '../../services/data.service';
+import {AuthNotLoginGuard} from "../../services/auth-not-login.guard";
 
 @Component({
   selector: 'app-map',
@@ -31,7 +32,7 @@ export class MapComponent implements OnInit {
   fromInput: boolean = false;
   destInput: boolean = false;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService, private router: Router,private authNotLoginGuard: AuthNotLoginGuard) {}
 
   ngOnInit(): void {
 
@@ -45,8 +46,8 @@ export class MapComponent implements OnInit {
   }
 
   sendData(): void{
+    this.authNotLoginGuard.selectedCourse = true;
     this.course.userName = this.authService.getLogin();
-
     this.router.navigate(['/course'], {state: {data: {origin: this.origin, dest: this.destination, course: this.course}}}).then(r => {console.log('course')});
   }
 

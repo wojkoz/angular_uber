@@ -31,7 +31,6 @@ export class SignupComponent implements OnInit {
         password: this.formGroup.value.password,
       }).subscribe((value =>
         {
-          this.router.navigate(['/login'])
         }
 
       ))
