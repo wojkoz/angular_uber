@@ -28,6 +28,7 @@ import {CourseComponent} from './components/course/course.component';
 import {LinksBarComponent} from './components/links-bar/links-bar.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AuthInterceptor} from './services/auth.interceptor';
+import { UserCoursesComponent } from './components/user-courses/user-courses.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import {AuthInterceptor} from './services/auth.interceptor';
     MapViewComponent,
     CourseComponent,
     LinksBarComponent,
+    UserCoursesComponent,
 
   ],
   imports: [
