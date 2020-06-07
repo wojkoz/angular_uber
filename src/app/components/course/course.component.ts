@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Course, DataService} from '../../services/data.service';
+import {Router} from '@angular/router';
 
 declare var google: any;
 @Component({
@@ -13,18 +14,23 @@ export class CourseComponent implements OnInit {
   displayDirections = true;
   data;
   course: Course
+  price: Number;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {
     this.origin = history.state.data.origin;
     this.dest = history.state.data.dest;
     this.course = history.state.data.course
     this.calculateDistanceAndTime();
+    this.price = 5;
+    this.calculatePrice();
   }
-  
+
   saveCourse(): void {
-    this.dataService.createOrUpdate(this.course).subscribe(value => {console.log(this.course)})
+    this.dataService.createOrUpdate(this.course).subscribe(value => {
+      this.router.navigate(['/']).then(r => {});
+    })
   }
 
   calculateDistanceAndTime(){
@@ -48,9 +54,18 @@ export class CourseComponent implements OnInit {
           else {
             document.getElementById('duration').innerHTML = directionsData.duration.text;
             document.getElementById('distance').innerHTML = directionsData.distance.text;
+
           }
         }
       });
+  }
+
+  calculatePrice(){
+    const distance = document.getElementById('distance').innerText.charAt(0)
+    console.log(distance)
+    // if(distance>2){
+    //   this.price = 5 + distance * 2;
+    // }
   }
 
 }

@@ -28,17 +28,26 @@ export class MapComponent implements OnInit {
   //----------------------------------------------
 
   course: Course
+  fromInput: boolean = false;
+  destInput: boolean = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
+
     this.setCurrentPosition();
+    this.course = {
+      origin: 'ssss',
+      destination: '',
+      price: 0,
+      userName: '',
+    }
   }
 
   sendData(): void{
     this.course.userName = this.authService.getLogin();
 
-    this.router.navigate(['/course'], {state: {data: {origin: this.origin, dest: this.destination, course: this.course}}});
+    this.router.navigate(['/course'], {state: {data: {origin: this.origin, dest: this.destination, course: this.course}}}).then(r => {console.log('course')});
   }
 
   private setCurrentPosition() {
@@ -62,10 +71,16 @@ export class MapComponent implements OnInit {
   }
 
   onAutocompleteSelected($event: google.maps.places.PlaceResult) {
-    this.course.origin = $event.adr_address
+    this.course.origin = $event.formatted_address
+    this.fromInput = true;
   }
 
   onAutocompleteDestinationSelected($event: google.maps.places.PlaceResult) {
-    this.course.destination = $event.adr_address
+    this.course.destination = $event.formatted_address
+    this.destInput = true;
+  }
+
+  isDisabled(): boolean {
+    return (this.fromInput === true && this.destInput === true);
   }
 }

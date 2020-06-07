@@ -5,6 +5,7 @@ import {LoginComponent} from './components/login/login.component';
 import {SignupComponent} from './components/signup/signup.component';
 import {CourseComponent} from "./components/course/course.component";
 import {AuthGuard} from './services/auth.guard';
+import {AuthNotLoginGuard} from './services/auth-not-login.guard';
 
 
 const routes: Routes = [
@@ -25,7 +26,7 @@ const routes: Routes = [
   {
     path: 'course',
     component: CourseComponent,
-    canActivate: [AuthGuard]
+    canActivate: [AuthNotLoginGuard]
   }
 ];
 
