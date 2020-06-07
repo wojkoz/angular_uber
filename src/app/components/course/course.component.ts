@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Course, DataService} from '../../services/data.service';
 import {Router} from '@angular/router';
 
+
+type Fun = () => any;
 declare var google: any;
 @Component({
   selector: 'app-course',
@@ -24,7 +26,7 @@ export class CourseComponent implements OnInit {
     this.course = history.state.data.course
     this.calculateDistanceAndTime();
     this.price = 5;
-    this.calculatePrice();
+
   }
 
   saveCourse(): void {
@@ -36,6 +38,8 @@ export class CourseComponent implements OnInit {
   calculateDistanceAndTime(){
     let directionsService = new google.maps.DirectionsService();
 
+    const funn = () => this.calculatePrice();
+
     directionsService.route({
         origin: {lat: this.origin.lat, lng: this.origin.lng},
         destination: {lat: this.dest.lat, lng: this.dest.lng},
@@ -43,7 +47,7 @@ export class CourseComponent implements OnInit {
         optimizeWaypoints: true,
         travelMode: 'DRIVING'
       },
-      function(response, status) {
+      function(response, status, f:Fun = funn) {
         if (status !== 'OK') {
           return;
         } else {
@@ -55,17 +59,18 @@ export class CourseComponent implements OnInit {
             document.getElementById('duration').innerHTML = directionsData.duration.text;
             document.getElementById('distance').innerHTML = directionsData.distance.text;
 
+            f();
           }
         }
-      });
+      })
   }
 
   calculatePrice(){
-    const distance = document.getElementById('distance').innerText.charAt(0)
-    console.log(distance)
-    // if(distance>2){
-    //   this.price = 5 + distance * 2;
-    // }
+    const distArr = document.getElementById('distance').innerText.split(" ");
+    const distance = Number.parseFloat(distArr[0].replace(',','.'));
+    if(distance>2){
+      this.price = 5 + distance * 2;
+    }
   }
 
 }
