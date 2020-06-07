@@ -4,6 +4,7 @@ import {HomeComponent} from './components/home/home.component';
 import {LoginComponent} from './components/login/login.component';
 import {SignupComponent} from './components/signup/signup.component';
 import {CourseComponent} from "./components/course/course.component";
+import {AuthGuard} from './services/auth.guard';
 
 
 const routes: Routes = [
@@ -14,14 +15,17 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'signup',
     component: SignupComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'course',
-    component: CourseComponent
+    component: CourseComponent,
+    canActivate: [AuthGuard]
   }
 ];
 

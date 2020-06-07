@@ -8,10 +8,8 @@ import {HomeComponent} from './components/home/home.component';
 import {SignupComponent} from './components/signup/signup.component';
 import {LoginComponent} from './components/login/login.component';
 import {MainViewComponent} from './components/main-view/main-view.component';
-import {MainViewItemComponent} from './components/main-view-item/main-view-item.component';
 import {MainViewItemTextComponent} from './components/main-view-item-text/main-view-item-text.component';
 import {MainViewItemImageComponent} from './components/main-view-item-image/main-view-item-image.component';
-import {MainViewItemDescriptionComponent} from './components/main-view-item-description/main-view-item-description.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FooterComponent} from './components/footer/footer.component';
 import {MainViewItemDescriptionCalculateRoadComponent} from './components/main-view-item-description-calculate-road/main-view-item-description-calculate-road.component';
@@ -25,10 +23,11 @@ import {DirectionsMapDirective} from './directives/directions-map.directive';
 import {MapViewComponent} from './components/map-view/map-view.component';
 import {AgmDirectionModule} from 'agm-direction';
 import {MatCardModule} from '@angular/material/card';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CourseComponent} from './components/course/course.component';
 import {LinksBarComponent} from './components/links-bar/links-bar.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {AuthInterceptor} from './services/auth.interceptor';
 
 
 @NgModule({
@@ -39,10 +38,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     SignupComponent,
     LoginComponent,
     MainViewComponent,
-    MainViewItemComponent,
     MainViewItemTextComponent,
     MainViewItemImageComponent,
-    MainViewItemDescriptionComponent,
     FooterComponent,
     MainViewItemDescriptionCalculateRoadComponent,
     MapComponent,
@@ -68,7 +65,12 @@ import {ReactiveFormsModule} from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

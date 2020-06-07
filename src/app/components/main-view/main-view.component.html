@@ -1,10 +1,45 @@
 <div id="mainViewComponent">
   <div class="row">
-    <div id="border" class="col-lg-4" *ngFor="let tab of tabs">
-      <main-view-item [title]="tab.title" [icon]="tab.icon"></main-view-item>
-      <div *ngIf="tab.active">
-        <main-view-item-description [id]="tab.id" [description]="tab.description"></main-view-item-description>
+
+    <div class="col-lg-4">
+      <div>
+        <main-view-item-image [icon]="faCar"></main-view-item-image>
+        <br>
+        <main-view-item-text title="Przejazdy"></main-view-item-text>
       </div>
+
+      <div>
+        <p>Wybierz miejsce docelowe oraz miejsce odbioru</p>
+        <main-view-item-description-calculate-road></main-view-item-description-calculate-road>
+      </div>
+
     </div>
+
+    <div class="col-lg-4">
+      <div>
+        <main-view-item-image [icon]="faRoute"></main-view-item-image>
+        <br>
+        <main-view-item-text title="O nas"></main-view-item-text>
+      </div>
+
+      <div>
+        <p>Opis</p>
+      </div>
+
+    </div>
+
+    <div class="col-lg-4">
+      <div>
+        <main-view-item-image [icon]="faDollarSign"></main-view-item-image>
+        <br>
+        <main-view-item-text title="Ostanie kursy"></main-view-item-text>
+      </div>
+
+      <div>
+        <p>Opis</p>
+      </div>
+
+    </div>
+
   </div>
 </div>
