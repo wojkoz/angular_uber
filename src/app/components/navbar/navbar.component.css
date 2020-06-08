@@ -2,14 +2,32 @@ nav{
   background-color: black;
   color:white;
   text-decoration: none;
+  font-family: Bahnschrift;
+  padding: 10px 0px;
+  height: 5vh;
 }
 li{
-  width:5%;
+  width: 30%;
+  text-align: center;
 }
-nav a{
+a{
   color:white;
 }
 
-button#logoutBtn{
-  color: white;
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width .8s;
+}
+
+a:hover::after{
+  width: 100%;
+  transition: width .8s;
+}
+
+.nav-link{
+  cursor: pointer;
 }

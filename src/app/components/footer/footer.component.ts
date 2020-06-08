@@ -8,10 +8,6 @@ import {faEnvelope} from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  faFacebook = faFacebook;
-  faTwitter = faTwitter;
-  faEnvelope = faEnvelope;
-  faInstagram = faInstagram;
   constructor() { }
 
   ngOnInit(): void {

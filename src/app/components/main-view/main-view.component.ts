@@ -33,9 +33,9 @@ export class MainViewComponent implements OnInit {
 
   isLoggedIn(){
     if(!this.authService.isLoggedIn()){
-      document.getElementById('zakryj').style.display = 'none';
+      document.getElementById('userLoggedDiv').style.display = 'none';
     }else {
-      document.getElementById('odkryj').style.display = 'none';
+      document.getElementById('userNotLoggedDiv').style.display = 'none';
     }
   }
 }

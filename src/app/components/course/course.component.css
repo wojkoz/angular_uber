@@ -1,7 +1,41 @@
 div{
-  font-size: 30px;
-  border: 1px solid black;
+  background: black;
+}
+#courseInfo{
+  height: 35vh;
+}
+ul li{
+  display: inline-block;
   text-align: center;
-  margin: 0% 20%;
-  padding: 100px 0px;
+}
+li{
+  width: 33%;
+}
+p{
+  font-size: 28px;
+  color:white;
+  font-family: Bahnschrift;
+  text-align: center;
+}
+ul{
+  padding-top: 100px;
+}
+
+#button{
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+button{
+  font-size: 25px;
+  padding: 1% 6%;
+  background: #EDE6E3;
+  color: black;
+  font-family: Bahnschrift;
+}
+button:hover{
+  background: #EDE6E3;
+  color: black;
+  font-family: Bahnschrift;
 }

@@ -15,7 +15,7 @@ export class UserCoursesComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.user)
     if(this.user == undefined){
-      this.dataService.getAll().subscribe(value => this.setCourses(value, 15))
+      this.dataService.getAll().subscribe(value => this.setCourses(value, 10))
     }else{
       this.dataService.getByUser(this.user).subscribe(value => this.setCourses(value, 5))
     }
