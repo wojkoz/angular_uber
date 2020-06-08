@@ -1,0 +1,15 @@
+nav{
+  background-color: black;
+  color:white;
+  text-decoration: none;
+}
+li{
+  width:5%;
+}
+nav a{
+  color:white;
+}
+
+button#logoutBtn{
+  color: white;
+}

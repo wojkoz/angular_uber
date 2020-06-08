@@ -1,0 +1,16 @@
+<nav>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/']">Home</a>
+    </li>
+    <li class="nav-item" *ngIf="!isLoggedIn()">
+      <a class="nav-link" (click)="openLoginDialog()">Login</a>
+    </li>
+    <li class="nav-item" *ngIf="!isLoggedIn()">
+      <a class="nav-link" (click)="openSignUpDialog()">Sign Up</a>
+    </li>
+    <li class="nav-item" *ngIf="isLoggedIn()">
+      <button  id="logoutBtn" (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>
