@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
 import {DataService} from '../../services/data.service';
 import {faCar, faDollarSign, faRoute} from '@fortawesome/free-solid-svg-icons';
-import {ChangeDetection} from "@angular/cli/lib/config/schema";
+
 
 @Component({
   selector: 'app-main-view',
@@ -13,6 +13,7 @@ export class MainViewComponent implements OnInit {
   faCar = faCar;
   faDollarSign = faDollarSign;
   faRoute = faRoute;
+  login: String;
 
   constructor( private authService: AuthService, private dataService: DataService) {
   }
@@ -22,10 +23,12 @@ export class MainViewComponent implements OnInit {
   }
 
   getAllCoursesByUser(){
-    const login = this.authService.getLogin();
-    this.dataService.getByUser(login).subscribe(value => {
-      console.log('GetAllCourses', value);
+    this.login = this.authService.getLogin();
+    this.dataService.getByUser(this.login).subscribe(value => {
     })
+  }
+  shouldShowLogin(): boolean{
+    return this.authService.isLoggedIn();
   }
 
   isLoggedIn(){

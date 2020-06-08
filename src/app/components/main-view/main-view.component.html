@@ -26,8 +26,8 @@
         <main-view-item-text title="O nas"></main-view-item-text>
       </div>
 
-      <div>
-        <p>Opis</p>
+      <div class="d-flex flex-column">
+        <app-user-courses *ngIf="shouldShowLogin()" [user]="login"></app-user-courses>
       </div>
 
     </div>
