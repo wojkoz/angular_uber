@@ -1,4 +1,4 @@
-<div>
+<div id="width">
   <mat-card-content class="autocomplete-container">
     <mat-google-maps-autocomplete (onLocationSelected)="onLocationSelected($event)"
                                   [addressLabelText]="adres_poczatkowy"
@@ -14,5 +14,5 @@
                                   [country]="country">
     </mat-google-maps-autocomplete>
   </mat-card-content>
-  <button type="button" class="btn btn-dark" (click)="sendData()" *ngIf="isDisabled()">Submit</button>
+  <button type="button" class="btn btn-dark" (click)="sendData()" *ngIf="isDisabled()">Jedziemy!</button>
 </div>
