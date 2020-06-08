@@ -1,7 +1,9 @@
 <div>
-  <agm-map [latitude]="origin.latitude" [longitude]="origin.longitude" [streetViewControl]="false">
+  <agm-map [latitude]="origin.latitude" [longitude]="origin.longitude"
+           [streetViewControl]="false" [scrollwheel]="false" [disableDefaultUI]="true"
+           [draggable]="false" [mapTypeControl]="false" [fitBounds]="true">
     <agm-direction *ngIf="displayDirection" [origin]="this.origin" [destination]="this.destination"></agm-direction>
-    <agm-marker [longitude]="origin.longitude" [latitude]="origin.latitude"></agm-marker>
-    <agm-marker [longitude]="destination.longitude" [latitude]="destination.latitude"></agm-marker>
+    <agm-marker [longitude]="origin.longitude" [latitude]="origin.latitude" [agmFitBounds]="true"></agm-marker>
+    <agm-marker [longitude]="destination.longitude" [latitude]="destination.latitude" [agmFitBounds]="true"></agm-marker>
   </agm-map>
 </div>

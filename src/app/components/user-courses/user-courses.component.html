@@ -1,11 +1,15 @@
 <div>
-  <ol>
+  <ul>
     <li *ngFor="let course of courses">
-
+        <span class="col-6">
+          Z: {{course.origin}}
+        </span>
+        <span class="col-6">
+          Do: {{course.destination}}
+        </span>
         <p>
-          From {{course.origin}} to {{course.destination}} for {{course.price}}zł
+          Cena przejazdu: {{course.price}}zł
         </p>
-
     </li>
-  </ol>
+  </ul>
 </div>

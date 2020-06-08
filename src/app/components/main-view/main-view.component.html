@@ -1,8 +1,11 @@
-<div id="mainViewComponent">
+<div class="container-fluid" id="mainViewComponent">
   <div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4" id="userNotLoggedDiv">
+      <p>Zaloguj się aby przeglądać zawartość</p>
+    </div>
 
-    <div class="col-lg-4">
-      <div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4" id="userLoggedDiv">
+      <div class="center">
         <main-view-item-image [icon]="faCar"></main-view-item-image>
         <br>
         <main-view-item-text title="Przejazdy"></main-view-item-text>
@@ -15,31 +18,39 @@
 
     </div>
 
-    <div class="col-lg-4">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4" id="border">
       <div>
-        <main-view-item-image [icon]="faRoute"></main-view-item-image>
-        <br>
-        <main-view-item-text title="O nas"></main-view-item-text>
+        <div class="center">
+          <main-view-item-image [icon]="faRoute"></main-view-item-image>
+          <br>
+          <main-view-item-text title="O nas"></main-view-item-text>
+        </div>
+        <p>Projekt aplikacji wzorowany na aplikacji Uber. Stworzony na potrzeby zaliczenia projektu.</p>
+        <p>Wykonawcy:</p>
+        <p>Aleksander Ciurej</p>
+        <p>Wojciech Kozioł</p>
+        <p>Michał Kubis</p>
       </div>
-
       <div>
-        <p>Opis</p>
+        <div id="userCourse">
+          <p class="userName" *ngIf="shouldShowLogin()">Witaj, {{login}} twoje ostatnie kursy:</p>
+          <app-user-courses *ngIf="shouldShowLogin()" [user]="login"></app-user-courses>
+        </div>
       </div>
 
     </div>
 
-    <div class="col-lg-4">
-      <div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xl-4">
+      <div class="center">
         <main-view-item-image [icon]="faDollarSign"></main-view-item-image>
         <br>
-        <main-view-item-text title="Ostanie kursy"></main-view-item-text>
+        <main-view-item-text title="Ostatnie kursy"></main-view-item-text>
       </div>
 
-      <div>
+      <div class="d-flex flex-column">
         <app-user-courses></app-user-courses>
       </div>
 
     </div>
-
   </div>
 </div>

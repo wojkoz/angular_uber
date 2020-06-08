@@ -10,6 +10,8 @@ import {Router} from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
+  respond: any;
+
   formGroup = new FormGroup({
     login: new FormControl(''),
     email: new FormControl(''),
@@ -24,17 +26,23 @@ export class SignupComponent implements OnInit {
 
   //TODO: zabepzieczyć pola przed pustymi itp.
   onSubmit() {
-    if(this.formGroup.value.password === this.formGroup.value.repeatedPassword){
+    if(this.formGroup.value.password === this.formGroup.value.repeatedPassword && this.formGroup.value.login !== '' && this.formGroup.value.email !== ''){
       this.authService.createOrUpdate({
         name: this.formGroup.value.login,
         email: this.formGroup.value.email,
         password: this.formGroup.value.password,
-      }).subscribe((value =>
-        {
-          this.router.navigate(['/login'])
+      }).subscribe((value => {
+        this.respond = value;
+        if(this.respond.error !==undefined ){
+          document.getElementById('empty').innerHTML = 'Taki użytkownik już istnieje';
+          document.getElementById('empty').style.display = 'block';
+        }else{
+          location.reload();
         }
-
-      ))
+      }))
+    }else{
+      document.getElementById('empty').innerHTML = 'Puste pole';
+      document.getElementById('empty').style.display = 'block';
     }
 
   }

@@ -21,12 +21,15 @@ export class LoginComponent implements OnInit {
 
   //TODO: zabezpieczyc przed pustymi
   onSubmit() {
-    if(this.formGroup.value.login !== '' && this.formGroup.value.password !== ''){
+    if(this.formGroup.value.login !== '' && this.formGroup.value.password !== '') {
       this.authService.authenticate({
         login: this.formGroup.value.login,
-        password: this.formGroup.value.password })
-          .subscribe(value => this.router.navigate(['/']))
-      }
+        password: this.formGroup.value.password
+      })
+        .subscribe(value => {this.router.navigate(['/']);location.reload()})
+    }else{
+      document.getElementById('empty').style.display = 'block';
+    }
     }
   }
 
