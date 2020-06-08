@@ -16,6 +16,7 @@ export class MapComponent implements OnInit {
   adres_poczatkowy = "Skąd:"
   adres_koncowy = "Dokąd:"
   default_adres = "Twoja lokalizacja jest aktualnie ustawiona";
+  country = ['pl'];
 
   //---------------------------------------------
   origin = {

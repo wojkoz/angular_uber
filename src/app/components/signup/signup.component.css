@@ -1,3 +1,8 @@
 div#signUpMain{
   margin: 10% 20% 0% 20%;
 }
+#empty{
+  display: none;
+  color: red;
+  margin-top: 20px;
+}

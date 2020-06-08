@@ -7,7 +7,7 @@ import {AuthService} from './auth.service';
   providedIn: 'root'
 })
 export class AuthNotLoginGuard implements CanActivate {
-  constructor(private router: Router,private authService: AuthService) {
+  constructor(private router: Router, private authService: AuthService) {
   }
 
   selectedCourse = false;

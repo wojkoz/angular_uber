@@ -1,7 +1,11 @@
 <div id="mainViewComponent">
-  <div class="row">
+  <div class="row" id="refreshuj">
 
-    <div class="col-lg-4">
+    <div class="col-lg-4" id="odkryj">
+      <p>Zaloguj się aby przeglądać zawartość</p>
+    </div>
+
+    <div class="col-lg-4" id="zakryj">
       <div>
         <main-view-item-image [icon]="faCar"></main-view-item-image>
         <br>
@@ -35,7 +39,7 @@
         <main-view-item-text title="Ostanie kursy"></main-view-item-text>
       </div>
 
-      <div>
+      <div class="d-flex flex-column">
         <app-user-courses></app-user-courses>
       </div>
 

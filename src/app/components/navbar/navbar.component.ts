@@ -16,25 +16,26 @@ export class NavbarComponent implements OnInit {
 
   openLoginDialog(){
     this.dialog.open(LoginComponent, {
-      height: '340px',
+      height: '400px',
       width: '460px',
     });
   }
 
   openSignUpDialog(){
     this.dialog.open(SignupComponent,{
-      height: '520px',
+      height: '600px',
       width: '640px',
     });
   }
 
   ngOnInit(): void {
   }
+
   isLoggedIn(){
     return this.authService.isLoggedIn();
   }
 
   logout() {
-    this.authService.logout().subscribe(value => {this.router.navigate(['/']).then(r => {})});
+    this.authService.logout().subscribe(value => {this.router.navigate(['/']).then(r => {location.reload()})});
   }
 }

@@ -1,8 +1,9 @@
 div#mainViewComponent{
   border-color: black;
   border-style: solid;
+  height: 85vh;
+  text-align: center;
 }
-
-.row{
+.row {
   max-width: 100vw;
 }

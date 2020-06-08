@@ -16,6 +16,7 @@
         <label for="passwordSignUpRepeat">Password</label>
         <input type="password" class="form-control" id="passwordSignUpRepeat" formControlName="repeatedPassword" placeholder="Enter Your Password Again">
       </div>
-      <button type="submit" [disabled]="!formGroup.valid" class="btn btn-primary" mat-dialog-close>Submit</button>
+      <button type="submit" [disabled]="!formGroup.valid" class="btn btn-primary">Submit</button>
+      <p id="empty"></p>
     </form>
 </div>
