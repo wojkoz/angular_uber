@@ -1,8 +1,10 @@
 div#signUpMain{
   margin: 10% 20% 0% 20%;
 }
-#empty{
+#info{
   display: none;
   color: red;
+  font-size: 20px;
   margin-top: 20px;
+  font-weight: bold;
 }

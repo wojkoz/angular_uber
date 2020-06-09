@@ -1,18 +1,19 @@
 <div id="width">
   <mat-card-content class="autocomplete-container">
-    <mat-google-maps-autocomplete (onLocationSelected)="onLocationSelected($event)"
+    <mat-google-maps-autocomplete [country]="['pl']"
+                                  (onLocationSelected)="onLocationSelected($event)"
                                   [addressLabelText]="adres_poczatkowy"
                                   [placeholderText]="default_adres"
-                                  (onAutocompleteSelected)="onAutocompleteSelected($event)"
-                                  [country]="country">
+                                  (onAutocompleteSelected)="onAutocompleteSelected($event)">
     </mat-google-maps-autocomplete>
   </mat-card-content>
   <mat-card-content class="autocomplete-container">
     <mat-google-maps-autocomplete (onLocationSelected)="onDestinationLocationSelected($event)"
                                   [addressLabelText]="adres_koncowy"
     (onAutocompleteSelected)="onAutocompleteDestinationSelected($event)"
-                                  [country]="country">
+                                  [country]="['pl']">
     </mat-google-maps-autocomplete>
   </mat-card-content>
   <button type="button" class="btn btn-dark" (click)="sendData()" *ngIf="isDisabled()">Jedziemy!</button>
 </div>
+

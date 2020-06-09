@@ -1,9 +1,11 @@
 div#loginMain{
   margin: 10% 20% 0% 20%;
 }
-#empty{
+#info{
   display: none;
   color: red;
+  font-weight: bold;
+  font-size: 20px;
   margin-top: 20px;
 }
 

@@ -1,14 +1,14 @@
 <div id="loginMain">
     <form id="loginForm" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="login" mat-dialog-title>Login</label>
+        <label for="login" mat-dialog-title>Login/E-Mail</label>
         <input type="text" class="form-control" id="login" formControlName="login" placeholder="Enter Login">
       </div>
       <div class="form-group">
-        <label for="password">Password</label>
+        <label for="password" mat-dialog-title>Hasło</label>
         <input type="password" class="form-control" id="password" formControlName="password" placeholder="Password">
       </div>
-      <button type="submit" [disabled]="!formGroup.valid" class="btn btn-primary">Login</button>
-      <p id="empty">Puste pole</p>
+      <button type="submit" [disabled]="!formGroup.valid" class="btn btn-primary">Zaloguj się</button>
+      <p id="info">Puste pole</p>
     </form>
 </div>

@@ -14,13 +14,4 @@ export class MainViewItemDescriptionCalculateRoadComponent implements OnInit {
   ngOnInit() {
 
   }
-
-
-  onSetMarker(value){
-    console.log(value);
-  }
-
-  inputDestination(event) {
-    console.log(event.target.value)
-  }
 }
