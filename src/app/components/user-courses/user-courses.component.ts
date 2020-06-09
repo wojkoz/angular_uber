@@ -13,7 +13,6 @@ export class UserCoursesComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    console.log(this.user)
     if(this.user == undefined){
       this.dataService.getAll().subscribe(value => this.setCourses(value, 10))
     }else{
