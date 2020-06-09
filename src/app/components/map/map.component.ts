@@ -16,7 +16,6 @@ export class MapComponent implements OnInit {
   adres_poczatkowy = "Skąd:"
   adres_koncowy = "Dokąd:"
   default_adres = "Twoja lokalizacja jest aktualnie ustawiona";
-  country = ['pl'];
 
   //---------------------------------------------
   origin = {
@@ -49,7 +48,7 @@ export class MapComponent implements OnInit {
   sendData(): void{
     this.authNotLoginGuard.selectedCourse = true;
     this.course.userName = this.authService.getLogin();
-    this.router.navigate(['/course'], {state: {data: {origin: this.origin, dest: this.destination, course: this.course}}}).then(r => {console.log('course')});
+    this.router.navigate(['/course'], {state: {data: {origin: this.origin, dest: this.destination, course: this.course}}}).then(r => {});
   }
 
   private setCurrentPosition() {
@@ -61,13 +60,11 @@ export class MapComponent implements OnInit {
     }
   }
   onLocationSelected(location: Location) {
-    console.log('onLocationSelected: ', location);
     this.origin.lat = location.latitude;
     this.origin.lng = location.longitude;
   }
 
   onDestinationLocationSelected(location: Location) {
-    console.log('onLocationSelected: ', location);
     this.destination.lat = location.latitude;
     this.destination.lng = location.longitude;
   }

@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'signup',
@@ -19,12 +18,10 @@ export class SignupComponent implements OnInit {
     repeatedPassword: new FormControl(''),
   });
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
   }
-
-  //TODO: zabepzieczyć pola przed pustymi itp.
   onSubmit() {
     if(this.formGroup.value.password === this.formGroup.value.repeatedPassword && this.formGroup.value.login !== '' && this.formGroup.value.email !== ''){
       this.authService.createOrUpdate({
@@ -34,15 +31,20 @@ export class SignupComponent implements OnInit {
       }).subscribe((value => {
         this.respond = value;
         if(this.respond.error !==undefined ){
-          document.getElementById('empty').innerHTML = 'Taki użytkownik już istnieje';
-          document.getElementById('empty').style.display = 'block';
+          document.getElementById('info').innerHTML = 'Taki użytkownik już istnieje';
+          document.getElementById('info').style.display = 'block';
         }else{
-          location.reload();
+          document.getElementById('info').style.display = 'block';
+          document.getElementById('info').innerHTML = 'Pomyślnie zarejestrowano';
+          document.getElementById('info').style.color = 'green';
+          setTimeout(() => {
+            location.reload();
+          }, 2000);
         }
       }))
     }else{
-      document.getElementById('empty').innerHTML = 'Puste pole';
-      document.getElementById('empty').style.display = 'block';
+      document.getElementById('info').innerHTML = 'Puste pole';
+      document.getElementById('info').style.display = 'block';
     }
 
   }
